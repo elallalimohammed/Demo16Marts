@@ -6,7 +6,7 @@ using UsersWebApiMoq16_03_2026.Repositories;
 
 namespace UserApi_MoqTestProject
 {
-    
+   
     [TestClass]
     public class UnitTestUserController
     {
@@ -20,7 +20,20 @@ namespace UserApi_MoqTestProject
 
             _controller = new UsersController(_mockRepository.Object);
         } 
-       
+       [TestMethod]
+public async Task Create_ReturnsBadRequest_WhenModelStateInvalid()
+{
+// Arrange
+_controller.ModelState.AddModelError("Email", "Required");
+var user = new User();
+
+// Act
+var result = await _controller.Create(user);
+
+// Assert
+Assert.IsInstanceOfType(result.Result, typeof(BadRequestObjectResult));
+}
+
    
     }   
 }
