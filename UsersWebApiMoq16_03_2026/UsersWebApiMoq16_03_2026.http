@@ -1,0 +1,6 @@
+@UsersWebApiMoq16_03_2026_HostAddress = http://localhost:5124
+
+GET {{UsersWebApiMoq16_03_2026_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
