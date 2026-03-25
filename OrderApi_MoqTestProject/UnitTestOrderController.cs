@@ -1,11 +1,16 @@
-﻿namespace OrderApi_MoqTestProject
+﻿using Moq;
+using UsersWebApiMoq16_03_2026.Controllers;
+using UsersWebApiMoq16_03_2026.Repositories;
+
+namespace OrderApi_MoqTestProject
 {
     [TestClass]
     public class OrderControllerTest
     {
-        private Mock<IUserService> _userServiceMock;
-        private Mock<IPaymentService> _paymentServiceMock;
-        private Mock<IOrderRepository> _orderRepositoryMock;
+        private Mock<IUserService> _userServiceMock = null!;
+private Mock<IPaymentService> _paymentServiceMock = null!;
+private Mock<IOrderRepository> _orderRepositoryMock = null!;
+private OrderController _controller = null!;
 
         private OrderController _controller;
 
