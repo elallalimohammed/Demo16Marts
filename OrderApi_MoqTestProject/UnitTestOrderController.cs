@@ -10,9 +10,8 @@ namespace OrderApi_MoqTestProject
         private Mock<IUserService> _userServiceMock = null!;
 private Mock<IPaymentService> _paymentServiceMock = null!;
 private Mock<IOrderRepository> _orderRepositoryMock = null!;
-private OrderController _controller = null!;
-
-        private OrderController _controller;
+private OrdersController _controller = null!;
+     
 
         [TestInitialize]
         public void Setup()
@@ -21,7 +20,7 @@ private OrderController _controller = null!;
             _paymentServiceMock = new Mock<IPaymentService>();
             _orderRepositoryMock = new Mock<IOrderRepository>();
 
-            _controller = new OrderController(
+            _controller = new OrdersController(
                 _userServiceMock.Object,
                 _paymentServiceMock.Object,
                 _orderRepositoryMock.Object);
